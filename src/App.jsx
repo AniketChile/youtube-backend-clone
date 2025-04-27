@@ -14,7 +14,6 @@ function App() {
         console.error('Failed to fetch jokes:', error);
       }
     };
-
     fetchJokes();
   }, []);
 
