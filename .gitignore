@@ -24,3 +24,5 @@ dist-ssr
 *.sln
 *.sw?
 backend/.env
+src/utils/cloudinary.js
+src/utils/cloudinary.js

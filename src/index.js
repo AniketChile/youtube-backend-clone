@@ -3,9 +3,7 @@ import connectDB from "./db/index.js";
 import { app } from "./app.js";
 // require('dotenv).config({path:'./env'})
 
-dotenv.config({
-    path:'./.env'
-})
+dotenv.config()
 
 connectDB()
 .then(()=>{
@@ -17,6 +15,7 @@ connectDB()
     console.log("MongoDb connection failed !!! ",err);
 })
 
+console.log("ENV TEST:", process.env.CLOUDINARY_CLOUD_NAME );
 
 
 
