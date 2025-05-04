@@ -16,5 +16,11 @@ app.use(express.urlencoded({extended:true,limit:"16kb"})) //spaces and nested ob
 app.use(express.static("public")) //public folder is been created that can be acceses to any one
 app.use(cookieParser()) 
 
+//routes import
+import userRouter from "./routes/user.routes.js"
 
-export {app}
+
+//routes declaration
+app.use("/api/v1/users",userRouter)
+
+export {app} 
