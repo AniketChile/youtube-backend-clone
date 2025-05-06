@@ -86,7 +86,6 @@ const registerUser = asyncHandler(async (req, res) => {
   return res
     .status(201)
     .json(new ApiResponse(200, createdUser, "User registered successfully"));
-
 });
 
 const loginUser = asyncHandler(async (req, res) => {
@@ -123,7 +122,7 @@ const loginUser = asyncHandler(async (req, res) => {
     user._id
   );
 
-  const LoggedInUser = User.findById(user._id).select(
+  const LoggedInUser = await User.findById(user._id).select(
     "-password -refreshToken"
   );
 
@@ -144,7 +143,7 @@ const loginUser = asyncHandler(async (req, res) => {
           accessToken,
           refreshToken,
         },
-        "User loggedIn Successfully"
+        "User logged in successfully"
       )
     );
 });
@@ -172,11 +171,10 @@ const logOutUser = asyncHandler(async (req, res) => {
   };
 
   return res
-  .status(200)
-  .clearCookie("accessToken",options)
-  .clearCookie("refreshToken",options)
-  .json(new ApiResponse(200,{},"User logout successfully"))
-  
+    .status(200)
+    .clearCookie("accessToken", options)
+    .clearCookie("refreshToken", options)
+    .json(new ApiResponse(200, {}, "User logout successfully"));
 });
 
 export { registerUser, loginUser, logOutUser };
