@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-
+import { DB_NAME } from "../constants.js";
 
 /* 
     When we connect to the database we need to self remind 2 important things so that it's meets business requirement
@@ -8,8 +8,8 @@ import mongoose from "mongoose";
 */
 const connectDB = async() => {
     try {
-      console.log("Connecting to MongoDB:", process.env.MONGODB_URI.replace(/:\/\/.*?:.*?@/, '://<credentials>@'));
-       const connectionInstance =  await mongoose.connect("mongodb+srv://aniket123:b7Jozt1YMQ5esSmG@cluster0.rvsfv1q.mongodb.net/videotube?retryWrites=true&w=majority");
+    //   console.log("Connecting to MongoDB:", process.env.MONGODB_URI.replace(/:\/\/.*?:.*?@/, '://<credentials>@'));
+       const connectionInstance =  await mongoose.connect(`mongodb+srv://aniket123:b7Jozt1YMQ5esSmG@cluster0.rvsfv1q.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0/${DB_NAME}`);
         console.log(`\n MongoDb connected !! Db host: ${connectionInstance.connection.host}`);
     
     } catch (error) {

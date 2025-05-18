@@ -5,6 +5,10 @@ import { verifyJWT } from "../middlewares/auth.middleware.js";
 const router = Router()
 
 router.route("/register").post(
+    /*
+        we are adding upload.fileds because the application is designed in such a way that it 
+        want the avatar image as well as the coverImage.
+    */
     upload.fields([
         {
             name: "avatar",
