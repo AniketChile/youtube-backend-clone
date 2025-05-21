@@ -33,6 +33,8 @@ router.route("/refresh-token").post(refreshAccessToken)
 
 //changepassword
 router.route("/changeCurrentPassword").patch(verifyJWT,changeCurrentPassword)
+
+//getCurrentUser
 router.route("/getCurrentUser").get(verifyJWT,getCurrentUser);
 
 //updateData
