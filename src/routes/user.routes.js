@@ -47,12 +47,8 @@ router.route("/getCurrentUser").get(verifyJWT, getCurrentUser);
 
 //updateData
 router.route("/updateNameorEmail").patch(verifyJWT, updateAccountDetails);
-router
-  .route("/updateThumbnail")
-  .patch(verifyJWT, upload.single("avatar"), updateUserAvatar);
-router
-  .route("/updateCoverImage")
-  .patch(verifyJWT, upload.single("coverImage"), updateUserCoverImage);
+router.route("/updateThumbnail").patch(verifyJWT, upload.single("avatar"), updateUserAvatar);
+router.route("/updateCoverImage").patch(verifyJWT, upload.single("coverImage"), updateUserCoverImage);
 
 //channel
 router.route("/channelInfo").get(verifyJWT, updateUserCoverImage);
