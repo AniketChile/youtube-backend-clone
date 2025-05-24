@@ -345,9 +345,9 @@ const updateUserCoverImage = asyncHandler(async (req, res) => {
 });
 
 const userChannelProfile = asyncHandler(async (req, res) => {
-  const username = req.params;
+  const {username} = req.params;
 
-  if (!username?.trim()) throw new ApiError(400, "Enter the user name");
+  if (!(username?.trim())) throw new ApiError(400, "Enter the user name");
 
   const channel = await User.aggregate([
     {
@@ -402,7 +402,7 @@ const userChannelProfile = asyncHandler(async (req, res) => {
     },
   ]);
 
-  if (channel?.length) {
+  if (channel?.length == 0) {
     throw new ApiError(404, "channel doesnot exist");
   }
 
@@ -415,7 +415,7 @@ const getWatchHistory = asyncHandler(async (req, res) => {
   const user = await User.aggregate([
     {
       $match: {
-        _id: new Types.ObjectId(req.user._id),
+        _id: new mongoose.Types.ObjectId(req.user._id),
       },
     },
     {
