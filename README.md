@@ -109,7 +109,7 @@ REFRESH_TOKEN_EXPIRY=7d
 ## 📬 Contact
 
 Built with ❤️ by \[Aniket Chile]
-Reach me on [LinkedIn](https://linkedin.com/in/your-profile](https://www.linkedin.com/in/aniket-chile-576421202/) or drop a ⭐ if you like the repo!
+Reach me on [LinkedIn](https://www.linkedin.com/in/aniket-chile-576421202/) or drop a ⭐ if you like the repo!
 
 ```
 
