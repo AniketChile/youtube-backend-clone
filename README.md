@@ -96,14 +96,6 @@ REFRESH_TOKEN_EXPIRY=7d
 
 ---
 
-## 📸 Screenshots
-
-| Feature       | Example                                              |
-| ------------- | ---------------------------------------------------- |
-| Watch History | ![channelHistory](./screenshots/channel-history.png) |
-| Auth Flow     | ![auth-flow](./screenshots/auth-flow.png)            |
-
----
 
 ## 🧠 Lessons & Takeaways
 
